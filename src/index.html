@@ -35,7 +35,10 @@
         .info{
         font-size: 18px;
         display: flex;
+        flex-wrap: nowrap;
         justify-content: space-around;
+        text-decoration: none;
+        color: rgb(44, 44, 44);
       }
 
       .image-item{
@@ -56,6 +59,8 @@
         flex-direction: column;
         justify-content: space-around;
         margin-right: 10px;
+text-decoration: none;
+color: rgb(62, 62, 62);
       }
       
 
@@ -94,7 +99,11 @@
         .search{
 width: 60;
         }
-  
+  b{
+    display: flex;
+    text-decoration: none;
+
+  }
     </style>
       <form class="search-form" id="search-form">
       <input
@@ -103,7 +112,7 @@ width: 60;
         autocomplete="off"
         placeholder="Search images..."
       />
-      <button class="search"type="submit">🔍</button>
+      <button class="search"type="submit">🔍🔍</button>
       <!-- <button class="search"type="submit">Search</button> -->
         </form>
     <div class="gallery"></div>
