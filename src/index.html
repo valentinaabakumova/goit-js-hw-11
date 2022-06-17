@@ -14,76 +14,86 @@
         padding: 0;
         margin: 0;
       }
-
-      .search-form{
-        position: fixed;
-        top: 0;
-        background-color: rgb(127, 185, 255);
-        width: 100%;
-        height: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .gallery{
+.gallery{
         margin-top: 70px;
         display: flex;
         flex-wrap: wrap;
         align-items: stretch;
       }
-      .image-item{
-       width: 100%;
-      height: 450px;
-        object-fit: cover;
+      .search-form{
+        position: fixed;
+        top: 0;
+        background-color: rgba(8, 29, 54, 0.301);
+        width: 100%;
+        height: 74px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
-      .info{
-        font-size: 17px;
+
+        .info{
+        font-size: 18px;
         display: flex;
         justify-content: space-around;
       }
 
+      .image-item{
+       width: 100%;
+       height: 400px;
+       object-fit: cover;
+      }
+
+    .photo-card{
+        flex-basis: calc((100% - 80px) / 3);
+        margin: 10px;
+        border: 1px rgb(158, 177, 239);
+      }
+
+      
       .info-item{
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         margin-right: 10px;
       }
-      .photo-card{
-        flex-basis: calc((100% - 60px) / 3);
-        margin: 10px;
-        border: 1px rgb(158, 177, 239);
-      }
+      
 
       .load-more{
         display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    color: aliceblue;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        color: aliceblue;
         
       }
       button{
         width: 150px;
-        height: 50px;
+        height: 60px;
         border-color: aliceblue;
-        background-color: rgb(76, 88, 212);
-        border-radius: 7px;
+        background-color: rgb(17, 18, 39);
+        border-radius: 3px;
         font-size: 25px;
-        font-style: bold;
-            color: aliceblue;
+        font-style: normal;
+        color: aliceblue;
       }
 
       input{
         width: 200px;
-        height: 50px;
-        font-size: 20px;
+        height: 60px;
+        font-size: 25px;
         margin-right: 10px;
+        font-style: normal;
+        padding: 5px;
       }
 
       .hidden{
         display: none;
       }
+        .search{
+width: 60;
+        }
+  
     </style>
       <form class="search-form" id="search-form">
       <input
@@ -92,7 +102,8 @@
         autocomplete="off"
         placeholder="Search images..."
       />
-      <button type="submit">Search</button>
+      <button class="search"type="submit">🔍</button>
+      <!-- <button class="search"type="submit">Search</button> -->
         </form>
     <div class="gallery"></div>
     <button type="button" class="load-more hidden">Load more</button>

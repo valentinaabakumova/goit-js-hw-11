@@ -29,6 +29,8 @@ async function onSearch(e) {
     totalImages = 0;
     searchQuery = input.value;
     if (searchQuery === '') {
+      // console.log('empty');
+      empty();
       return;
     }
 
@@ -78,21 +80,22 @@ function makeMarkup(data) {
         comments,
         downloads,
       }) => {
-        return `<a class="photo-card" href="${largeImageURL}">
-    <img class="image-item" src="${webformatURL}" alt="${tags}" data-source="${largeImageURL}"loading="lazy" />
-    <div class="info">
-      <p class="info-item">
-        <b>Likes:</b> ${likes}
-      </p>
-      <p class="info-item">
-        <b>Views:</b> ${views}
-      </p>
-      <p class="info-item">
-        <b>Comments:</b> ${comments}
-      </p>
-      <p class="info-item">
-        <b>Downloads:</b> ${downloads}
-      </p>
+        return `
+        <a class="photo-card" href="${largeImageURL}">
+        <img class="image-item" src="${webformatURL}" alt="${tags}" data-source="${largeImageURL}"loading="lazy" />
+          <div class="info">
+              <p class="info-item">
+                <b>Likes:</b> ${likes}
+              </p>
+              <p class="info-item">
+                <b>Views:</b> ${views}
+              </p>
+              <p class="info-item">
+                <b>Comments:</b> ${comments}
+              </p>
+              <p class="info-item">
+                <b>Downloads:</b> ${downloads}
+              </p>
     </div>
     </a>`;
       }
@@ -125,7 +128,7 @@ async function fetchImages(query) {
 
 function notFound() {
   Notify.failure('Nothing found, try again :)', {
-    timeout: 2000,
+    timeout: 3000,
     fontSize: '25px',
     width: '400px',
   });
@@ -133,8 +136,8 @@ function notFound() {
 
 function myQuery(data) {
   if (data.totalHits > 0) {
-    Notify.info(`We found ${data.totalHits} images! `, {
-      timeout: 2000,
+    Notify.info(`We found ~ ${data.totalHits} images`, {
+      timeout: 3000,
       fontSize: '25px',
       width: '400px',
     });
@@ -142,7 +145,15 @@ function myQuery(data) {
 }
 function endOfQuery() {
   Notify.info('The End :)', {
-    timeout: 2000,
+    timeout: 3000,
+    fontSize: '25px',
+    width: '400px',
+  });
+}
+
+function empty() {
+  Notify.info('Hey, try to type something )', {
+    timeout: 3000,
     fontSize: '25px',
     width: '400px',
   });
