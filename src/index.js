@@ -86,7 +86,7 @@ function makeMarkup(data) {
           <div class="info">
               <p class="info-item">
                 <b>Likes:</b> ${likes}
-              </p>
+             </p>
               <p class="info-item">
                 <b>Views:</b> ${views}
               </p>
