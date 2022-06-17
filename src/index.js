@@ -136,7 +136,7 @@ function notFound() {
 
 function myQuery(data) {
   if (data.totalHits > 0) {
-    Notify.info(`We found ~ ${data.totalHits} images`, {
+    Notify.info(`We found ${data.totalHits}+ images`, {
       timeout: 3000,
       fontSize: '25px',
       width: '400px',
